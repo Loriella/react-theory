@@ -4,9 +4,9 @@ import classes from './Car.css'
 
 class Car extends Component {
 
-  componentWillReceiveProps(nextProps) {
-    console.log('Car componentWillReceiveProps', nextProps)
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('Car componentWillReceiveProps', nextProps)
+  // }
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log('Car shouldComponentUpdate', nextProps, nextState);
@@ -17,18 +17,18 @@ class Car extends Component {
     console.log('Car componentWillUpdate', nextProps, nextState)
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('Car getDerivedStateFromProps', nextProps, prevState);
-    return prevState
-  }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   console.log('Car getDerivedStateFromProps', nextProps, prevState);
+  //   return prevState
+  // }
 
-  componentDidUpdate() {
-    console.log('Car componentDidUpdate')
-  }
+  // componentDidUpdate() {
+  //   console.log('Car componentDidUpdate')
+  // }
 
-  getSnapshotBeforeUpdate() {
-    console.log('Car getSnapshotBeforeUpdate')
-  }
+  // getSnapshotBeforeUpdate() {
+  //   console.log('Car getSnapshotBeforeUpdate')
+  // }
 
   componentWillUnmount() {
     console.log('Car componentWillUnmount')
@@ -36,6 +36,11 @@ class Car extends Component {
 
   render() {
     console.log('Car render');
+
+    if (Math.random() > 0.7) {
+      throw new Error('Car random failed')
+    }
+
     const inputClasses = [classes.input];
 
     if (this.props.name !== '') {
